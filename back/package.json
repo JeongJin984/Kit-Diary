@@ -1,0 +1,19 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "Kit-Diary back",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeongJin984/Kit-Diary.git"
+  },
+  "author": "outersky JeongJin984",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeongJin984/Kit-Diary/issues"
+  },
+  "homepage": "https://github.com/JeongJin984/Kit-Diary#readme"
+}
