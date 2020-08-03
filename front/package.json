@@ -1,0 +1,19 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "Kit-Diary front",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeongJin984/Kit-Diary.git"
+  },
+  "author": "chaewon1109 devtinatina dustjr1565 outersky salmon2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeongJin984/Kit-Diary/issues"
+  },
+  "homepage": "https://github.com/JeongJin984/Kit-Diary#readme"
+}
