@@ -12,7 +12,7 @@ const App = ({ Component }) => {
     return(
         <div>
             <Head>
-                <title>my test</title>
+                <title>kit-diary</title>
                 <meta charSet = "utf-8"></meta>
             </Head>
             <Component />

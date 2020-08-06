@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
+import Carousel from 'react-bootstrap/Carousel'
 
 import { Navbar, Nav, Form, Button, FormControl, Container, Row, Col, Card } from 'react-bootstrap'
 
@@ -16,11 +17,11 @@ const AppLayout = ({ children }) => {
 				<Row>
 					<Col xs={9}>
 						<Navbar bg="light" variant="light">
-							<Navbar.Brand href="#home">Navbar</Navbar.Brand>
+							<Navbar.Brand href="#home">홈</Navbar.Brand>
 							<Nav className="mr-auto">
-								<Nav.Link href="#home">Home</Nav.Link>
-								<Nav.Link href="#features">Features</Nav.Link>
-								<Nav.Link href="#pricing">Pricing</Nav.Link>
+								<Nav.Link href="#FreeBoard">자유게시판</Nav.Link>
+								<Nav.Link href="#review">강의후기</Nav.Link>
+								<Nav.Link href="#TimeTable">시간표</Nav.Link>
 							</Nav>
 							<Form inline>
 								<FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -51,7 +52,6 @@ const AppLayout = ({ children }) => {
 				</Row>
 			</Container>
 			
-
 		</div>
 	)
 }
