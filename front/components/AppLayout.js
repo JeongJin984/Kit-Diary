@@ -32,10 +32,7 @@ const AppLayout = ({ children }) => {
 							{children}
 						</div>
 					</Col>
-					<Col>
-						<Row>
-							
-						</Row>
+					<Col xs={3}>
 						<Row>
 							<Card style={{ width: '18rem', marginTop: "10px" }}>
 								<Card.Img variant="top" src="/cat.png" />
