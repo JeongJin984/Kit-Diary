@@ -11,7 +11,7 @@ db.class = require('./class')(sequelize, Sequelize);
 db.comment = require('./comment')(sequelize, Sequelize);
 db.hashtag = require('./hashtag')(sequelize, Sequelize);
 db.User = require('./User')(sequelize, Sequelize);
-db.POST = require('./POST')(sequelize, Sequelize);
+db.POST = require('./post')(sequelize, Sequelize);
 
 
 Object.keys(db).forEach(modelName => {
