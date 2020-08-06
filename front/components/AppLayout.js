@@ -4,6 +4,10 @@ import Link from 'next/link'
 
 import { Navbar, Nav, Form, Button, FormControl, Container, Row, Col, Card } from 'react-bootstrap'
 
+const StyledButton = styled(Button)`
+    margin-left: 30px;
+`
+
 const AppLayout = ({ children }) => {
 	return(
 		<div>
@@ -22,24 +26,31 @@ const AppLayout = ({ children }) => {
 								<FormControl type="text" placeholder="Search" className="mr-sm-2" />
 								<Button variant="outline-primary">Search</Button>
 							</Form>
+							<Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>
 						</Navbar>
 						<div>
 							{children}
 						</div>
 					</Col>
 					<Col>
-						<Card style={{ width: '18rem', marginTop: "10px" }}>
-							<Card.Img variant="top" src="/cat.png" />
-							<Card.Body>
-								<Card.Title>Card Title</Card.Title>
-								<Card.Text>
-									Some quick example text to build on the card title and make up the bulk of
-									the card's content.
-								</Card.Text>
-							</Card.Body>
-						</Card>
+						<Row>
+							
+						</Row>
+						<Row>
+							<Card style={{ width: '18rem', marginTop: "10px" }}>
+								<Card.Img variant="top" src="/cat.png" />
+								<Card.Body>
+									<Card.Title>Card Title</Card.Title>
+									<Card.Text>
+										Some quick example text to build on the card title and make up the bulk of
+										the card's content.
+									</Card.Text>
+								</Card.Body>
+							</Card>
+						</Row>
 					</Col>
-					<Col></Col>
+					<Col>
+					</Col>
 				</Row>
 			</Container>
 			
