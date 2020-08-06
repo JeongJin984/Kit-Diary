@@ -1,14 +1,25 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
+import styled from 'styled-components'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
+import { Card } from 'react-bootstrap'
 
+const StyledCard = styled(Card)`
+    margin: auto;
+`
+const StyledButton = styled(Button)`
+   margin-right: 10px;
+`
 const login= () => {
     return(
+        
         <div>
             <br/>
+            <StyledCard style={{ width: '30rem', marginTop: "10px" }}>
+            <StyledCard.Img variant="top" src="/cat.png" />
             <Form>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -32,10 +43,12 @@ const login= () => {
             <br/>
             <ButtonToolbar aria-label="Toolbar with button groups">
                 <ButtonGroup className="mr-2" aria-label="First group">
-                    <Link href="signup"><a><Button>회원가입</Button></a></Link> <Button>비밀번호 찾기</Button>
+                    <Link href="signup"><a><StyledButton>회원가입</StyledButton></a></Link> <StyledButton>비밀번호 찾기</StyledButton>
                 </ButtonGroup>
             </ButtonToolbar>
+            </StyledCard>
         </div>
+
     );
 }
 
