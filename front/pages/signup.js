@@ -6,82 +6,89 @@ import Col from 'react-bootstrap/Col';
 import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
 
-
 const StyledCard = styled(Card)`
     margin: auto;
-`
-const StyledButton = styled(Button)`
-   margin-right: 10px;
-`
+`;
 
 const signup = () => {
-    return(
-        <div>
-            <br/><br/>
-            <StyledCard style={{ width: '30rem', marginTop: "10px" }}>
+    return (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <StyledCard className="stylecard" style={{ width: '30rem', marginTop: '20px' }}>
                 <StyledCard.Img variant="top" src="/cat.png" />
-                    <Form>
-                        이름
-                        <Row>
-                            <Col>
-                            <Form.Control placeholder="First name" />
-                            </Col>
-                            <Col>
-                            <Form.Control placeholder="Last name" />
-                            </Col>
-                        </Row>
-                    </Form>
-                    <br/>
-                    <Form>
+                <Form>
+                    <Form.Group className="signup-form-name">
+                        <Form.Label>이름</Form.Label>
+                        <Form.Label>성</Form.Label>
+                    </Form.Group>
+                    <Form.Group className="signup-form-name">
+                        <Form.Control placeholder="First name" className="signup-name" />
+                        <Form.Control placeholder="Last name" className="signup-name" />
+                    </Form.Group>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control
+                                type="email"
+                                placeholder="Enter email"
+                                className="signup-email"
+                            />
                         </Form.Group>
-
                         <Form.Group as={Col} controlId="formGridPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Password"
+                                className="signup-password"
+                            />
                         </Form.Group>
                     </Form.Row>
-                    <br/>
+                    <br />
                     <Form>
-                    <fieldset>
-                        <Form.Group as={Row}>
-                        <Form.Label as="legend" column sm={2}>
-                            학과
-                        </Form.Label>
-                        <Col sm={10}>
-                            <Form.Check
-                            type="radio"
-                            label="경영학과"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios1"
-                            />
-                            <Form.Check
-                            type="radio"
-                            label="전자공학과"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios2"
-                            />
-                            <Form.Check
-                            type="radio"
-                            label="컴퓨터공학과"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
-                            />
-                        </Col>
-                        </Form.Group>
-                    </fieldset>
+                        <fieldset>
+                            <Form.Group as={Row}>
+                                <Form.Label as="legend" column sm={2}>
+                                    학과
+                                </Form.Label>
+                                <Col
+                                    sm={10}
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        alignItems: 'flexStart',
+                                        justifyContent: 'space-around',
+                                    }}
+                                >
+                                    <Form.Check
+                                        type="radio"
+                                        label="경영학과"
+                                        name="formHorizontalRadios"
+                                        id="formHorizontalRadios1"
+                                    />
+                                    <Form.Check
+                                        type="radio"
+                                        label="전자공학과"
+                                        name="formHorizontalRadios"
+                                        id="formHorizontalRadios2"
+                                    />
+                                    <Form.Check
+                                        type="radio"
+                                        label="컴퓨터공학과"
+                                        name="formHorizontalRadios"
+                                        id="formHorizontalRadios3"
+                                    />
+                                </Col>
+                            </Form.Group>
+                            <Form.Group>
+                                <Button variant="primary" type="submit" className="signup-btn">
+                                    완료
+                                </Button>
+                            </Form.Group>
+                        </fieldset>
                     </Form>
-
-                    <Button variant="primary" type="submit">
-                        완료
-                    </Button>
-                    </Form>
+                </Form>
             </StyledCard>
         </div>
     );
-}
+};
 
 export default signup;
