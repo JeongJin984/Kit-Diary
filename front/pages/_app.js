@@ -8,16 +8,25 @@ import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 
+
+import wrapper from '../store/configure-store'
+import withReduxSaga from 'next-redux-saga'
+
+
 const App = ({ Component }) => {
     return(
         <div>
-            <Head>
-                <title>kit-diary</title>
-                <meta charSet = "utf-8"></meta>
-            </Head>
-            <Component />
+            <div>
+                <Head>
+                    <title>kit-diary</title>
+                    <meta charSet = "utf-8"></meta>
+                </Head>
+                <Component />
+            </div>
         </div>
     );
 }
 
-export default App;
+export default wrapper.withRedux(withReduxSaga(App))
+
+//export default App

@@ -8,7 +8,6 @@ import AppLayout from '../components/AppLayout'
 const Home = () => {
     return(
         <>
-
             <AppLayout>
                 <br/>
                 <Accordion defaultActiveKey="0">
