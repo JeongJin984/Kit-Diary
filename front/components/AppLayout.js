@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Carousel from 'react-bootstrap/Carousel'
-
+import { useSelector } from 'react-redux'
 import { Navbar, Nav, Form, Button, FormControl, Container, Row, Col, Card } from 'react-bootstrap'
 
 const StyledButton = styled(Button)`
@@ -10,6 +10,12 @@ const StyledButton = styled(Button)`
 `
 
 const AppLayout = ({ children }) => {
+
+	const [current, setCurrent] = useState('');
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+	console.log('components/AppLayout.js   '+ isLoggedIn)
+	
+
 	return(
 		<div>
 			<Link href="/"><img src="/banner.jpg" width="100%"/></Link>
@@ -27,7 +33,7 @@ const AppLayout = ({ children }) => {
 								<FormControl type="text" placeholder="Search" className="mr-sm-2" />
 								<Button variant="outline-primary">Search</Button>
 							</Form>
-							<Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>
+							{isLoggedIn?<StyledButton variant="outline-primary">로그아웃</StyledButton>:<Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>}
 						</Navbar>
 						<div>
 							{children}

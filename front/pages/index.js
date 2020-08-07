@@ -3,15 +3,17 @@ import { Card, Tabs, Tab, Button, Accordion } from 'react-bootstrap';
 import Link from 'next/link';
 import Carousel from 'react-bootstrap/Carousel'
 import AppLayout from '../components/AppLayout'
-
+import { useSelector } from 'react-redux'
 
 const Home = () => {
+    const [current, setCurrent] = useState('');
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+    console.log('pages/index.js  '+ isLoggedIn)
     return(
         <>
             <AppLayout>
                 <br/>
                 <Accordion defaultActiveKey="0">
-
                 <Carousel style={{ width: '900px', marginTop: "10px", margin: "auto"}}>
                 <Carousel.Item>
                     <img
@@ -60,7 +62,6 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="1">
                         자유게시판
