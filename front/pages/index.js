@@ -3,6 +3,7 @@ import { Card, Tabs, Tab, Button, Accordion } from 'react-bootstrap';
 import Link from 'next/link';
 import Carousel from 'react-bootstrap/Carousel'
 import AppLayout from '../components/AppLayout'
+import Toast from 'react-bootstrap/Toast'
 
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
                 <br/>
                 <Accordion defaultActiveKey="0">
 
-                <Carousel style={{ width: '900px', marginTop: "10px", margin: "auto"}}>
+                <Carousel style={{ width: '900px', marginTop: "10px", margin: "auto", marginBottom: "40px"}}>
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
@@ -61,13 +62,30 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-
-                    <Card>
+                        <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="1">
                         자유게시판
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="1">
-                        <Card.Body>Hello! I'm another body</Card.Body>
+                        <Card.Body>
+                        최근글:
+                            <Toast>
+                                <Toast.Header>
+                                    <strong className="mr-auto">유저1</strong>
+                                    <small>시간</small>
+                                </Toast.Header>
+                                <Toast.Body>글내용</Toast.Body>
+                            </Toast>
+                            <br></br>
+                            인기글:
+                            <Toast>
+                                <Toast.Header>
+                                    <strong className="mr-auto">유저2</strong>
+                                    <small>시간</small>
+                                </Toast.Header>
+                                <Toast.Body>글내용</Toast.Body>
+                            </Toast>
+                        </Card.Body>
                         </Accordion.Collapse>
                     </Card>
                     <Card>
@@ -75,7 +93,25 @@ const Home = () => {
                         강의후기
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="2">
-                        <Card.Body>Hello! I'm another body</Card.Body>
+                        <Card.Body>
+                            최근후기:
+                            <Toast>
+                                <Toast.Header>
+                                    <strong className="mr-auto">유저1</strong>
+                                    <small>시간</small>
+                                </Toast.Header>
+                                <Toast.Body>후기내용</Toast.Body>
+                            </Toast>
+                            <br></br>
+                            인기후기:
+                            <Toast>
+                                <Toast.Header>
+                                    <strong className="mr-auto">유저2</strong>
+                                    <small>시간</small>
+                                </Toast.Header>
+                                <Toast.Body>후기내용</Toast.Body>
+                            </Toast>
+                        </Card.Body>
                         </Accordion.Collapse>
                     </Card>
                 </Accordion>   
