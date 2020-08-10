@@ -8,18 +8,17 @@ import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 
-
-import wrapper from '../store/configure-store'
-import withReduxSaga from 'next-redux-saga'
-import { useSelector } from 'react-redux'
-
-
+import wrapper from '../store/configure-store';
+import withReduxSaga from 'next-redux-saga';
+import { useSelector } from 'react-redux';
 
 const App = ({ Component }) => {
     const [current, setCurrent] = useState('');
-    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
-    console.log('app.js   '+ isLoggedIn)
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+    console.log('app.js   '+ isLoggedIn);
     
+
+
     return(
         <div>
             <div>

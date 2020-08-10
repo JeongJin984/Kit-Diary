@@ -4,6 +4,7 @@ import {HYDRATE} from "next-redux-wrapper"
 
 import user from './user'
 import post from './post'
+
 const rootReducer = (state, action) =>{
     switch(action.type){
         case HYDRATE:

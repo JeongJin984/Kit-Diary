@@ -6,16 +6,13 @@ export const initialState = {
         Password:'',
         professor:'',
     },
+    fetchinUpdate: false,   //로그인 중 상태확인
 	isLoggedIn: false,
 }
 
 export const LOG_IN_REQUEST = 'LOG_IN_REQUEST'
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS'
 export const LOG_IN_FAILURE = 'LOG_GIN_FAILURE'
-
-export const LOAD_USER_REQUEST = 'LOAD_USER_REQUEST'
-export const LOAD_USER_SUCCESS = 'LOAD_USER_SUCCESS'
-export const LOAD_USER_FAILURE = 'LOAD_USER_FAILURE'
 
 export const LOG_OUT = 'LOG_OUT'
 
@@ -39,23 +36,28 @@ const reducer = (state=initialState, action) =>{
         case LOG_IN_REQUEST:
             return {
                 ...state,
-                isLoggedIn: true,
+                fetchinUpdate: true,
+                isLoggedIn: false,
             }
         case LOG_IN_SUCCESS:
             return {
                 ...state,
+                fetchinUpdate: false,
                 isLoggedIn: true,
-                
+                me: action.result,
             }
-        case LOG_IN_REQUEST:
+        case LOG_IN_FAILRUE:
             return {
                 ...state,
-                isLoggedIn: true,
+                fetchinUpdate: false,
+                isLoggedIn: false,
             }
+
+
         case LOG_OUT:
             return {
                 ...state,
-                isLoggedIn: true,
+                isLoggedIn: false,
             }
         default:
             return state 
