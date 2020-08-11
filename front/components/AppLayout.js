@@ -37,7 +37,7 @@ const AppLayout = ({ children }) => {
 					</Col>
 					<Col xs={3} style={{padding:"0px"}}>
 						<Row>
-							{onLogin && <Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
+							{onLogin ? <Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
 								<Card.Img variant="top" src="/cat.png" />
 								<Card.Body>
 									<Card.Title>사용자이름</Card.Title>
@@ -45,9 +45,8 @@ const AppLayout = ({ children }) => {
 										자기소개
 									</Card.Text>
 								</Card.Body>
-							</Card>
-							}
-							{!onLogin && <Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
+							</Card> :
+							<Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
 								<Card.Img variant="top" src="/cat.png" />
 								<Card.Body>
 									<Card.Title>로그인을 해주세요</Card.Title>
