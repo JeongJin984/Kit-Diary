@@ -26,8 +26,12 @@
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
+<<<<<<< HEAD
     "redux-devtools-extension": "^2.13.8",
     "redux-saga": "^1.1.3",
+=======
+    "react-router-dom": "^5.2.0",
+>>>>>>> b
     "styled-components": "^5.1.1"
   }
     
