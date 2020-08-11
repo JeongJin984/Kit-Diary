@@ -8,9 +8,6 @@ import Toast from 'react-bootstrap/Toast'
 import { useSelector } from 'react-redux'
 
 const Home = () => {
-    const [current, setCurrent] = useState('');
-    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
-    console.log('pages/index.js  '+ isLoggedIn)
     return(
         <>
             <AppLayout>
