@@ -10,12 +10,9 @@ import Link from 'next/link';
 import './css/login.css';
 import './css/signup.css';
 
-
-import wrapper from '../store/configure-store'
-import withReduxSaga from 'next-redux-saga'
-import { useSelector } from 'react-redux'
-
-
+import wrapper from '../store/configure-store';
+import withReduxSaga from 'next-redux-saga';
+import { useSelector } from 'react-redux';
 
 const App = ({ Component }) => {
 <<<<<<< HEAD
@@ -28,9 +25,11 @@ const App = ({ Component }) => {
             <Component />
 =======
     const [current, setCurrent] = useState('');
-    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
-    console.log('app.js   '+ isLoggedIn)
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+    console.log('app.js   '+ isLoggedIn);
     
+
+
     return(
         <div>
             <div>
