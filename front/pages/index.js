@@ -3,18 +3,28 @@ import { Card, Tabs, Tab, Button, Accordion } from 'react-bootstrap';
 import Link from 'next/link';
 import Carousel from 'react-bootstrap/Carousel'
 import AppLayout from '../components/AppLayout'
+<<<<<<< HEAD
 import Toast from 'react-bootstrap/Toast'
 
+=======
+import { useSelector } from 'react-redux'
+>>>>>>> 0697de92546ac5a8bd4f5ab5284aa32aea7bfe90
 
 const Home = () => {
+    const [current, setCurrent] = useState('');
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+    console.log('pages/index.js  '+ isLoggedIn)
     return(
         <>
-
             <AppLayout>
                 <br/>
                 <Accordion defaultActiveKey="0">
+<<<<<<< HEAD
 
                 <Carousel style={{ width: '900px', marginTop: "10px", margin: "auto", marginBottom: "40px"}}>
+=======
+                <Carousel style={{ width: '900px', marginTop: "10px", margin: "auto"}}>
+>>>>>>> 0697de92546ac5a8bd4f5ab5284aa32aea7bfe90
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
@@ -62,7 +72,11 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+<<<<<<< HEAD
                         <Card>
+=======
+                    <Card>
+>>>>>>> 0697de92546ac5a8bd4f5ab5284aa32aea7bfe90
                         <Accordion.Toggle as={Card.Header} eventKey="1">
                         자유게시판
                         </Accordion.Toggle>
