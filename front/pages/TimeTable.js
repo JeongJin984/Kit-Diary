@@ -1,16 +1,11 @@
 import React from 'react';
 import AppLayout from '../components/AppLayout';
-import {Table} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import {Table} from 'react-bootstrap'
 
 const TimeTable = () => {
     return(
         <AppLayout>
             <br/><br/>
-            <div>
-            <Button variant="outline-info" style={{ marginLeft: "950px" }}>추가</Button>{' '}
-            <Button variant="outline-info">수정</Button>{' '}<br/><br/>
-            </div>
             <Table responsive="sm">
                 <thead>
                 <tr>

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Carousel from 'react-bootstrap/Carousel'
-import { useSelector } from 'react-redux'
+
 import { Navbar, Nav, Form, Button, FormControl, Container, Row, Col, Card } from 'react-bootstrap'
 
 const StyledButton = styled(Button)`
@@ -45,7 +45,8 @@ const AppLayout = ({ children }) => {
 										자기소개
 									</Card.Text>
 								</Card.Body>
-							</Card> :
+							</Card>
+							:
 							<Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
 								<Card.Img variant="top" src="/cat.png" />
 								<Card.Body>

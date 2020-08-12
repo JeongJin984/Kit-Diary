@@ -1,49 +1,14 @@
 import React from 'react';
 import AppLayout from '../components/AppLayout';
 import Table from 'react-bootstrap/Table';
+import {Button} from 'react-bootstrap'
+import BoardsPage from '../components/BoardsPage';
 
 const FreeBoard = () => {
     return(
         <AppLayout>
-            <br/><br/>
-            <Table responsive="sm">
-                <thead>
-                <tr>
-                    <th width="20px">번호</th>
-                    <th width="210px">제목</th>
-                    <th width="50px">작성자</th>
-                    <th width="50px">날짜</th>
-                    <th width="20px">조회</th>
-                    <th width="20px">추천</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </Table>
+            <Button variant="outline-info" style={{float:'right',margin:"1%" ,marginRight: "6%"}}>글쓰기</Button>{' '}
+            <BoardsPage/>
         </AppLayout>
     );
 }
