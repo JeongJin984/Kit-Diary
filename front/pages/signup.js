@@ -5,6 +5,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const StyledCard = styled(Card)`
     margin: auto;
@@ -14,7 +17,14 @@ const signup = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
             <StyledCard className="stylecard" style={{ width: '30rem', marginTop: '20px' }}>
-                <StyledCard.Img variant="top" src="/cat.png" />
+                <Link href="login">
+                    <FontAwesomeIcon
+                        icon={faChevronLeft}
+                        size="2x"
+                        style={{ marginLeft: '20px', marginTop: '20px', cursor: 'pointer' }}
+                    />
+                </Link>
+                <StyledCard.Img variant="top" src="/cat.png" style={{ borderRadius: '25px' }} />
                 <Form>
                     <Form.Group className="signup-form-name">
                         <Form.Label>이름</Form.Label>
