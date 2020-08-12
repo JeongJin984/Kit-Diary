@@ -10,7 +10,11 @@ import Link from 'next/link';
 import './css/login.css';
 import './css/signup.css';
 
+import wrapper from '../store/configure-store';
+import { useSelector } from 'react-redux';
+
 const App = ({ Component }) => {
+
   return(
     <div>
       <Head>
@@ -22,6 +26,5 @@ const App = ({ Component }) => {
   );
 };
 
-export default App
 
-//export default App
+export default wrapper.withRedux(App)

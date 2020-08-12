@@ -4,14 +4,25 @@ import Link from 'next/link'
 import Carousel from 'react-bootstrap/Carousel'
 import { useSelector } from 'react-redux'
 import { Navbar, Nav, Form, Button, FormControl, Container, Row, Col, Card } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+
+//import { setTest } from '../reducers/test'
+import { logOutAction } from '../reducers/user'
 
 const StyledButton = styled(Button)`
     margin-left: 30px;
 `
 
 const AppLayout = ({ children }) => {
-	const [onLogin, setOnLogin] = useState(false);
+	const dispatch = useDispatch();
 
+	const onLogin = useSelector(state=>state.user.isLoggedIn)
+	console.log('App.js' + onLogin)
+
+	const Logout = () => {
+		dispatch(logOutAction ());
+	}
+	
 	return(
 		<div>
 			<Link href="/"><img src="/banner.jpg" width="100%"/></Link>
@@ -44,6 +55,7 @@ const AppLayout = ({ children }) => {
 									<Card.Text>
 										자기소개
 									</Card.Text>
+									{onLogin && <StyledButton variant="outline-primary" onClick = {Logout}>로그아웃</StyledButton>}
 								</Card.Body>
 							</Card> :
 							<Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
