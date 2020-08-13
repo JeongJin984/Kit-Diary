@@ -34,7 +34,7 @@ const login = () => {
 	const onSubmitLogInForm = useCallback(
 		(e) => {
             e.preventDefault();
-			dispatch(logInAction({id: email, password}))
+			dispatch(logInAction({email, password}))
 		},
 		[email, password],
     )

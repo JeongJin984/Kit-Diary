@@ -2,9 +2,8 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Carousel from 'react-bootstrap/Carousel'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Navbar, Nav, Form, Button, FormControl, Container, Row, Col, Card } from 'react-bootstrap'
-import { useDispatch } from 'react-redux'
 
 //import { setTest } from '../reducers/test'
 import { logOutAction } from '../reducers/user'
@@ -15,12 +14,13 @@ const StyledButton = styled(Button)`
 
 const AppLayout = ({ children }) => {
 	const dispatch = useDispatch();
-
-	const onLogin = useSelector(state=>state.user.isLoggedIn)
-	console.log('App.js' + onLogin)
+	const [current, setCurrent] = useState('');
+	const onLogin = useSelector(state=>state.user.isLoggedIn);
+	console.log('AppLayout Login : ' + onLogin);
 
 	const Logout = () => {
 		dispatch(logOutAction ());
+		consolo.log(onLogin)
 	}
 	
 	return(
