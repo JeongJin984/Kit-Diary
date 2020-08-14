@@ -19,7 +19,7 @@ function* logIn(action) {
 		// // id, password 백
 		yield put({
 			type: 'LOG_IN_SUCCESS',
-			data: {email:'asdf@asdf', password: 'asdf'}
+			data: action.data
 		})	
 	} catch (error) {
 		yield put({

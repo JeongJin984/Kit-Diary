@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
@@ -33,12 +33,11 @@ const login = () => {
 
 	const onSubmitLogInForm = useCallback(
 		(e) => {
-            e.preventDefault();
-			dispatch(logInAction({email, password}))
-		},
+            dispatch(logInAction({email, password}))
+        },
 		[email, password],
     )
-    
+
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
             <StyledCard className="stylecard" style={{ width: '30rem', marginTop: '20px' }}>
