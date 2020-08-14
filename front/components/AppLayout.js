@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Carousel from 'react-bootstrap/Carousel'
@@ -14,15 +14,20 @@ const StyledButton = styled(Button)`
 
 const AppLayout = ({ children }) => {
 	const dispatch = useDispatch();
-	const [current, setCurrent] = useState('');
-	const onLogin = useSelector(state=>state.user.isLoggedIn);
-	console.log('AppLayout Login : ' + onLogin);
+	const [islogined, setLogin] = useState(false);
 
 	const Logout = () => {
-		dispatch(logOutAction ());
-		consolo.log(onLogin)
+		dispatch(logOutAction());
+		setLogin(JSON.parse(sessionStorage.getItem('islogined')));
+		//console.log('logOut_localStorage   '+ JSON.parse(sessionStorage.getItem('islogined')))
 	}
+
+	useEffect(() => {
+		setLogin(JSON.parse(sessionStorage.getItem('islogined')));
+		//console.log(JSON.parse(sessionStorage.getItem('user')));
+	}, []);
 	
+
 	return(
 		<div>
 			<Link href="/"><img src="/banner.jpg" width="100%"/></Link>
@@ -37,7 +42,7 @@ const AppLayout = ({ children }) => {
 								<FormControl type="text" placeholder="Search" className="mr-sm-2" />
 								<Button variant="outline-primary">Search</Button>
 							</Form>
-							{!onLogin && <Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>}
+							{!islogined && <Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>}
 						</Navbar>
 			<Container fluid>
 				<Row>
@@ -48,14 +53,14 @@ const AppLayout = ({ children }) => {
 					</Col>
 					<Col xs={3} style={{padding:"0px"}}>
 						<Row>
-							{onLogin ? <Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
+							{islogined ? <Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
 								<Card.Img variant="top" src="/cat.png" />
 								<Card.Body>
 									<Card.Title>사용자이름</Card.Title>
 									<Card.Text>
 										자기소개
 									</Card.Text>
-									{onLogin && <StyledButton variant="outline-primary" onClick = {Logout}>로그아웃</StyledButton>}
+									{islogined && <StyledButton variant="outline-primary" onClick = {Logout}>로그아웃</StyledButton>}
 								</Card.Body>
 							</Card> :
 							<Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>

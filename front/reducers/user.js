@@ -8,26 +8,6 @@ export const initialState = {
     nickname: '',
   },
 
-  post:[
-    {
-      id: 1, //primery key
-      star : 0,
-      title: '',
-      postprofessor: '',
-      class: '',
-      like: 0,
-      disLike: 0,
-    },
-    {
-      id: 1, //primery key
-      star : 0,
-      title: '',
-      postprofessor: '',
-      class: '',
-      like: 0,
-      disLike: 0,
-    },
-  ],
 
   fetchinUpdate: false,   //로그인 중 상태확인
   isLoggedIn: false,
@@ -41,12 +21,13 @@ export const LOG_OUT = 'LOG_OUT'
 
 
 export const logInAction = (data) => {
-  console.log('logInAction');
+  //console.log('logInAction');
   return {
     type: 'LOG_IN_REQUEST',
     data: data
   }
 }
+
 
 export const logOutAction = () => {
   return {
@@ -58,17 +39,22 @@ export const logOutAction = () => {
 const reducer = (state=initialState, action) =>{
   switch(action.type){
       case LOG_IN_REQUEST:
-        console.log('login_request')
+        //console.log('login_request')
           return {
               ...state,
               fetchinUpdate: true,
-              isLoggedIn: true,
+              isLoggedIn: false,
           };
       case LOG_IN_SUCCESS:
-        console.log('success');
-        console.log(action.data);
-        return {
+        sessionStorage.setItem('user', JSON.stringify(action.data));
+        sessionStorage.setItem('islogined', true);
+        //console.log(JSON.parse(sessionStorage.user));
+        return { 
           ...state,
+          user :{
+            email : action.data.email,
+            password: action.data.password,
+          },
           fetchinUpdate: false,
           isLoggedIn: true,
         }
@@ -81,12 +67,14 @@ const reducer = (state=initialState, action) =>{
           }
 
       case LOG_OUT:
-          return {
-              ...state,
-              isLoggedIn: false,
-          }
+        sessionStorage.setItem('islogined', false);
+        sessionStorage.removeItem('user');
+        return {
+            ...state,
+            isLoggedIn: false,
+        }
       default:
-          return state 
+          return state ;
   }
 }
 
