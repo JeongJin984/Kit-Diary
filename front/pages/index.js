@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import { Card, Tabs, Tab, Button, Accordion } from 'react-bootstrap';
+import { Card, Tabs, Tab, Button, Accordion, Carousel, Toast } from 'react-bootstrap';
 import Link from 'next/link';
-import Carousel from 'react-bootstrap/Carousel'
 import AppLayout from '../components/AppLayout'
-import Toast from 'react-bootstrap/Toast'
 
 import { useSelector } from 'react-redux'
 

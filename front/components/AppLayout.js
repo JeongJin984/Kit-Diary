@@ -33,20 +33,16 @@ const AppLayout = ({ children }) => {
 								<Nav.Link href="/Review">강의후기</Nav.Link>
 								<Nav.Link href="/TimeTable">시간표</Nav.Link>
 							</Nav>
-							<Form inline>
-								<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-								<Button variant="outline-primary">Search</Button>
-							</Form>
 							{!onLogin && <Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>}
 						</Navbar>
 			<Container fluid>
 				<Row>
-					<Col xs={9}>
+					<Col xs={10}>
 						<div>
 							{children}
 						</div>
 					</Col>
-					<Col xs={3} style={{padding:"0px"}}>
+					<Col xs={2} style={{padding:"0px",  right: "0px"}}>
 						<Row>
 							{onLogin ? <Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
 								<Card.Img variant="top" src="/cat.png" />

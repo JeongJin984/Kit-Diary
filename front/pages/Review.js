@@ -1,7 +1,7 @@
 import React from 'react';
 import AppLayout from '../components/AppLayout';
 import Card from 'react-bootstrap/Card';
-import {Container, Row, Col, Button} from 'react-bootstrap'
+import {Container, Row, Col, Button} from 'react-bootstrap';
 
 const Review = () => {
     return(
