@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 import { Card } from 'react-bootstrap';
-import { useDispatch } from 'react-redux'
-import { logInAction } from '../reducers/user'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const StyledCard = styled(Card)`
     margin: auto;
@@ -42,6 +42,14 @@ const login = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
             <StyledCard className="stylecard" style={{ width: '30rem', marginTop: '20px' }}>
+                <Link href="/">
+                    <FontAwesomeIcon
+                        icon={faChevronLeft}
+                        size="2x"
+                        style={{ marginLeft: '20px', marginTop: '20px', cursor: 'pointer' }}
+                    />
+                </Link>
+
                 <StyledCard.Img variant="top" src="/cat.png" />
                 <Form onSubmit={onSubmitLogInForm}>
                     <Form.Group controlId="formBasicEmail">
