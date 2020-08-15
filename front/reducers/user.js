@@ -1,3 +1,4 @@
+import Router from "next/router";
 export const initialState = {
   user:{
     id: '', //primary key
@@ -17,6 +18,11 @@ export const LOG_IN_REQUEST = 'LOG_IN_REQUEST'
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS'
 export const LOG_IN_FAILRUE = 'LOG_IN_FAILRUE'
 
+
+export const SIGNUP_REQUEST = 'SIGNUP_REQUEST'
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
+export const SIGNUP_FAILRUE = 'SIGNUP_FAILRUE'
+
 export const LOG_OUT = 'LOG_OUT'
 
 
@@ -24,6 +30,15 @@ export const logInAction = (data) => {
   //console.log('logInAction');
   return {
     type: 'LOG_IN_REQUEST',
+    data: data
+  }
+}
+
+export const SignupAction = (data) => {
+  console.log('SignupAction');
+  console.log(data);
+  return {
+    type: 'SIGNUP_REQUEST',
     data: data
   }
 }
@@ -40,6 +55,7 @@ const reducer = (state=initialState, action) =>{
   switch(action.type){
       case LOG_IN_REQUEST:
         //console.log('login_request')
+        //console.log('login' + JSON.stringify(action.data));
           return {
               ...state,
               fetchinUpdate: true,
@@ -65,6 +81,29 @@ const reducer = (state=initialState, action) =>{
               fetchinUpdate: false,
               isLoggedIn: false,
           }
+      case SIGNUP_REQUEST:
+        console.log('signup_request')
+        console.log('signup_' + JSON.stringify(action.data));
+        return{
+          ...state,
+        }
+      case SIGNUP_SUCCESS:
+          console.log('signup_success')
+          console.log('signup_' + JSON.stringify(action.data));
+          alert('signup_success')
+          Router.push("/login")
+          return{
+            ...state,
+      }
+      case SIGNUP_FAILRUE:
+        console.log('signup_fail')
+        console.log('signup_' + JSON.stringify(action.data));
+        alert('signup_fail')
+        Router.push("/signup")
+        return{
+          ...state,
+    }
+
 
       case LOG_OUT:
         sessionStorage.setItem('islogined', false);

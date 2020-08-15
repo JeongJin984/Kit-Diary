@@ -9,12 +9,17 @@
     border-radius: 10px;
     box-shadow: 17px 6px 22px -10px rgba(0, 0, 0, 0.5);
 }
-.signup-name {
-    width: 40%;
+.signup-nickname {
+    width: 90%;
     border-radius: 10px;
     box-shadow: 17px 6px 22px -10px rgba(0, 0, 0, 0.5);
 }
+.signup-stdnum{
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 17px 6px 22px -10px rgba(0, 0, 0, 0.5);
 
+}
 .signup-form-name {
     display: flex;
     flex-direction: row;

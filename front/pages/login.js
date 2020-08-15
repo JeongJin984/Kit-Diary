@@ -36,6 +36,7 @@ const login = () => {
 
 	const onSubmitLogInForm = useCallback(
 		(e) => {
+            e.preventDefault()
             dispatch(logInAction({email, password}))
             Router.push("/")
         },
