@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Pagination from './common/pagination';
 import {paginate} from '../utils/paginate'
+import Link from 'next/link';
 
 export default class BoardsPage extends Component {
   getBoards = () => {
@@ -56,6 +57,7 @@ export default class BoardsPage extends Component {
           </thead>
           <tbody>
             {boards.map(board =>
+            <Link href={`/FreeBoardContent#id:${board.id}`}>
               <tr key={board.id}>
                 <td>{board.id}</td>
                 <td>{board.title}</td>
@@ -64,6 +66,7 @@ export default class BoardsPage extends Component {
                 <td>{board.view}</td>
                 <td>{board.like}</td>
               </tr>
+              </Link>
             )}
           </tbody>
         </table>
