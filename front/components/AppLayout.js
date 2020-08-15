@@ -27,23 +27,22 @@ const AppLayout = ({ children }) => {
 		//console.log(JSON.parse(sessionStorage.getItem('user')));
 	}, []);
 	
-
 	return(
 		<div>
 			<Link href="/"><img src="/banner.jpg" width="100%"/></Link>
 			<Navbar bg="light" variant="light">
-							<Navbar.Brand href="/">홈</Navbar.Brand>
-							<Nav className="mr-auto">
-								<Nav.Link href="/FreeBoard">자유게시판</Nav.Link>
-								<Nav.Link href="/Review">강의후기</Nav.Link>
-								<Nav.Link href="/TimeTable">시간표</Nav.Link>
-							</Nav>
-							<Form inline>
-								<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-								<Button variant="outline-primary">Search</Button>
-							</Form>
-							{!islogined && <Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>}
-						</Navbar>
+                <Navbar.Brand href="/">홈</Navbar.Brand>
+                <Nav className="mr-auto">
+                    <Nav.Link href="/FreeBoard">자유게시판</Nav.Link>
+                    <Nav.Link href="/Review">강의후기</Nav.Link>
+                    <Nav.Link href="/TimeTable">시간표</Nav.Link>
+                </Nav>
+                <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-primary">Search</Button>
+                </Form>
+                {!islogined && <Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>}
+            </Navbar>
 			<Container fluid>
 				<Row>
 					<Col xs={9}>
