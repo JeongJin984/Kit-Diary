@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, } from 'react';
 import Form from 'react-bootstrap/Form';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
@@ -6,6 +6,9 @@ import Link from 'next/link';
 import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import {useDispatch} from 'react-redux'
+import {logInAction} from '../reducers/user'
+import Router from "next/router";
 
 const StyledCard = styled(Card)`
     margin: auto;
@@ -29,11 +32,12 @@ const login = () => {
 			setPassword(e.target.value)
 		},
 		[],
-	)
+    )
 
 	const onSubmitLogInForm = useCallback(
 		(e) => {
             dispatch(logInAction({email, password}))
+            Router.push("/")
         },
 		[email, password],
     )

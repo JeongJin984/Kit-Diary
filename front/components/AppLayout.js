@@ -25,6 +25,8 @@ const AppLayout = ({ children }) => {
 	useEffect(() => {
 		setLogin(JSON.parse(sessionStorage.getItem('islogined')));
 		//console.log(JSON.parse(sessionStorage.getItem('user')));
+		//console.log(JSON.parse(sessionStorage.getItem('islogined')))
+
 	}, []);
 	
 	return(

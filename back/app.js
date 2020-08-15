@@ -3,9 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config()
+
+var passport = require('passport')
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var apiUserRouter = require('./routes/user');
+
+var session = require('express-session')
+var FileStore = require('session-file-store')(session)
 
 const models = require('./models');
 models.sequelize.sync();
@@ -22,8 +28,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  store: new FileStore()
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+const passportConfig = require('./passport')
+passportConfig()
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/user', apiUserRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,6 +59,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(3000,function(){
+  console.log('i\'m listening on 3000')
+})
 
 
 module.exports = app;
