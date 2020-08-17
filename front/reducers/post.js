@@ -1,24 +1,52 @@
 export const initialState = {
-  post:[  
+  posts:[  
     {
       id: 1, //primery key
       userid: 0, //foreigin key
-      star : 0,
-      title: '',
-      postprofessor: '',
-      class: '',
-      Like: 0,
-      DisLike: 0,
+      star : 3,
+      classification : '전공',
+      professor: '고재필',
+      class: '기초프로그래밍',
+      title: '좋아용',
+      contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+      Like: 3,
+      DisLike: 1,
     },
     {
-      id: 2, //primery key
+      id: 1, //primery key
       userid: 0, //foreigin key
-      Star : 0,
-      Title: '',
-      PostProfessor: '',
-      Class: '',
-      Like: 0,
-      DisLike: 0,
+      star : 3,
+      classification : '전공',
+      professor: '김성영',
+      class: '자바프로그래밍',
+      title: '좋아용',
+      contents:'너무 좋아용sdfsddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      Like: 3,
+      DisLike: 1,
+    },
+    {
+      id: 1, //primery key
+      userid: 0, //foreigin key
+      star : 3,
+      classification : '전공',
+      professor: '김성영',
+      class: '자바프로그래밍',
+      title: '좋아용',
+      contents:'너무 좋아용sdfsddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      Like: 3,
+      DisLike: 1,
+    },
+    {
+      id: 1, //primery key
+      userid: 0, //foreigin key
+      star : 3,
+      classification : '전공',
+      professor: '김성영',
+      class: '자바프로그래밍',
+      title: '좋아용',
+      contents:'너무 좋아용sdfsddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      Like: 3,
+      DisLike: 1,
     },
   ]
 }
