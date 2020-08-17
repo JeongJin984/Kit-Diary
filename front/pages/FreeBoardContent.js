@@ -2,6 +2,7 @@ import React from 'react';
 import AppLayout from '../components/AppLayout';
 import {Button, FormControl, FormGroup, Form, Container, Row,Col} from 'react-bootstrap'
 import BoardsPage from '../components/BoardsPage';
+import Comments from '../components/Comments'
 
 const FreeBoardContent = () => {
     return(
@@ -22,11 +23,12 @@ const FreeBoardContent = () => {
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 </Form.Row>
                 <Form.Row>
-                <Button variant="outline-info" style={{margin:"auto"}}>👍2</Button>{' '}
+                <Button variant="outline-info" style={{marginLeft:"45%"}}>👍2</Button>{' '}
+                <Button variant="outline-info" style={{marginLeft:"10px"}}>👎2</Button>{' '}
                 </Form.Row>
 
                 <Form.Row style={{marginTop:"10%"}}>
-                    댓글목록
+                    댓글목록생길예정
                 </Form.Row>
 
                 <Form.Row style={{marginTop:"10%"}}>
