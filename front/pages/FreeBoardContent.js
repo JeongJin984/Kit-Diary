@@ -1,8 +1,8 @@
 import React from 'react';
 import AppLayout from '../components/AppLayout';
-import {Button, FormControl, FormGroup, Form, Container, Row,Col} from 'react-bootstrap'
+import {Button, FormControl, FormGroup, Form, Container, Row,Col} from 'react-bootstrap';
 import BoardsPage from '../components/BoardsPage';
-import Comments from '../components/Comments'
+import Comments from '../components/Comments';
 
 const FreeBoardContent = () => {
     return(
@@ -28,7 +28,7 @@ const FreeBoardContent = () => {
                 </Form.Row>
 
                 <Form.Row style={{marginTop:"10%"}}>
-                    댓글목록생길예정
+                    <Comments />
                 </Form.Row>
 
                 <Form.Row style={{marginTop:"10%"}}>

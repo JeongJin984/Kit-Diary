@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Card, Tabs, Tab, Button, Accordion, Table } from 'react-bootstrap';
 import Link from 'next/link';
-import Carousel from 'react-bootstrap/Carousel'
-import AppLayout from '../components/AppLayout'
-import Toast from 'react-bootstrap/Toast'
-import Post from './post/[pid]'
+import Carousel from 'react-bootstrap/Carousel';
+import AppLayout from '../components/AppLayout';
+import Toast from 'react-bootstrap/Toast';
+import Post from './post/[pid]';
 
 
 const Home = () => {

@@ -9,10 +9,10 @@ const FreeBoard = () => {
     return(
         <AppLayout>
             <div style={{ float: 'right', marginRight: "0%" }}>
-                    <FormControl class="inline"  type="text" placeholder="Search"  />
-                    <Button variant="outline-info" style={{ width: "60px", height: "40px"}}>검색</Button>
-                    <Link href="/ReviewWrite"><a><Button variant="outline-info" style={{margin:"10px"}}>후기쓰기</Button>{' '} </a></Link>
-                    </div>
+                <FormControl class="inline"  type="text" placeholder="Search"  />
+                <Button variant="outline-info" style={{ width: "60px", height: "40px"}}>검색</Button>
+                <Link href="/ReviewWrite"><a><Button variant="outline-info" style={{margin:"10px"}}>후기쓰기</Button>{' '} </a></Link>
+            </div>
             <BoardsPage/>
         </AppLayout>
     );

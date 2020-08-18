@@ -3,7 +3,7 @@ import AppLayout from '../components/AppLayout';
 import Card from 'react-bootstrap/Card';
 import { Container, Row, Col, Button, FormControl, Form, InputGroup } from 'react-bootstrap'
 import ReviewCard from '../components/ReviewCard';
-import Link from 'next/link'
+import Link from 'next/link'z
 
 const Review = () => {
     return (

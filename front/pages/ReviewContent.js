@@ -2,7 +2,7 @@ import React from 'react';
 import AppLayout from '../components/AppLayout';
 import { Button, FormControl, FormGroup, Form, Container, Row, Col } from 'react-bootstrap'
 import ReviewCard from '../components/ReviewCard';
-import Comments from '../components/Comments'
+import Comments from '../components/Comments';
 
 const ReviewContent = () => {
     return (
@@ -37,8 +37,8 @@ const ReviewContent = () => {
                 </Form.Row>
 
                 <Form.Row style={{ marginTop: "10%" }}>
-                    댓글목록생길예정
                 </Form.Row>
+                <Comments />
             </Container>
         </AppLayout>
     );
