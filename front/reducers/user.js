@@ -29,7 +29,7 @@ export const LOG_OUT = 'LOG_OUT'
 export const logInAction = (data) => {
   //console.log('logInAction');
   return {
-    type: 'LOG_IN_REQUEST',
+    type: LOG_IN_REQUEST,
     data: data
   }
 }
@@ -38,7 +38,7 @@ export const SignupAction = (data) => {
   console.log('SignupAction');
   console.log(data);
   return {
-    type: 'SIGNUP_REQUEST',
+    type: SIGNUP_REQUEST,
     data: data
   }
 }
@@ -46,7 +46,7 @@ export const SignupAction = (data) => {
 
 export const logOutAction = () => {
   return {
-    type: 'LOG_OUT',
+    type: LOG_OUT,
     user: null
   }
 }
@@ -64,13 +64,10 @@ const reducer = (state=initialState, action) =>{
       case LOG_IN_SUCCESS:
         sessionStorage.setItem('user', JSON.stringify(action.data));
         sessionStorage.setItem('islogined', true);
-        //console.log(JSON.parse(sessionStorage.user));
+        console.log(JSON.parse(sessionStorage.user));
         return { 
           ...state,
-          user :{
-            email : action.data.email,
-            password: action.data.password,
-          },
+          user : action.data,
           fetchinUpdate: false,
           isLoggedIn: true,
         }
@@ -86,6 +83,7 @@ const reducer = (state=initialState, action) =>{
         console.log('signup_' + JSON.stringify(action.data));
         return{
           ...state,
+          fetchinUpdate:true,
         }
       case SIGNUP_SUCCESS:
           console.log('signup_success')
@@ -94,7 +92,8 @@ const reducer = (state=initialState, action) =>{
           Router.push("/login")
           return{
             ...state,
-      }
+            fetchinUpdate:false,
+        }
       case SIGNUP_FAILRUE:
         console.log('signup_fail')
         console.log('signup_' + JSON.stringify(action.data));
@@ -102,7 +101,8 @@ const reducer = (state=initialState, action) =>{
         Router.push("/signup")
         return{
           ...state,
-    }
+          fetchinUpdate:false,
+         }
 
 
       case LOG_OUT:
