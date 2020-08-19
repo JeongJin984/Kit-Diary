@@ -15,10 +15,10 @@ const Comments = () => {
           alt="Generic placeholder"
         />
         <Media.Body>
-          <h5>닉네임1</h5>
+          <h5>닉네임1 <h6 style={{float:"right"}}>2020.08.19 08:45</h6></h5>
           <p>
-            댓글내용
-          </p>
+            댓글내용 <div style={{float:"right"}}>👍8&nbsp;&nbsp;&nbsp;👎2</div><br/>
+          </p><br/>
           <Media>
             <img
               width={64}
@@ -28,14 +28,14 @@ const Comments = () => {
               alt="Generic placeholder"
             />
             <Media.Body>
-              <h5>닉네임2</h5>
+              <h5>닉네임2<h6 style={{float:"right"}}>2020.08.19 09:45</h6></h5>
               <p>
-                댓글내용
+                댓글내용 <div style={{float:"right"}}>👍8&nbsp;&nbsp;&nbsp;👎2</div>
               </p>
             </Media.Body>
           </Media>
         </Media.Body>
-      </Media><br/>
+      </Media><br/><br/>
       <Media>
         <img
           width={64}
@@ -45,9 +45,9 @@ const Comments = () => {
           alt="Generic placeholder"
         />
         <Media.Body>
-          <h5>닉네임3</h5>
+          <h5>닉네임3<h6 style={{float:"right"}}>2020.08.19 11:55</h6></h5>
           <p>
-            댓글내용
+            댓글내용 <div style={{float:"right"}}>👍8&nbsp;&nbsp;&nbsp;👎2</div>
           </p>
         </Media.Body>
       </Media><br/><br/>
