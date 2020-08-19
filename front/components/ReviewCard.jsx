@@ -7,16 +7,16 @@ import Link from 'next/link';
 export default class ReviewCard extends Component {
     getReviews = () => {
         const reviews = [
-            { id: 1, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★", contents: "내용~~~너무길면 ...으로 바꿀수 있나요?", like: "0",dislike:"0" },
-            { id: 2, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용~~~~~~~~~~~~~~~~~~~~~~~~~~~~", like: "0",dislike:"0" },
-            { id: 3, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
-            { id: 4, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
-            { id: 5, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
-            { id: 6, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
-            { id: 7, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
-            { id: 8, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
-            { id: 9, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
-            { id: 10, classification: "MSC", class: "이산수학", professor: "오길호", star: "★★★★★", contents: "내용", like: "0",dislike:"0" },
+            { id: 1, userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 3, contents: "내용~~~너무길면 ...으로 바꿀수 있나요?", like: 0,dislike:0 },
+            { id: 2,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용~~~~~~~~~~~~~~~~~~~~~~...", like: 0,dislike:0 },
+            { id: 3,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
+            { id: 4,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
+            { id: 5,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
+            { id: 6,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
+            { id: 7,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
+            { id: 8,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
+            { id: 9,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
+            { id: 10,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
         ]
         return reviews;
     }
@@ -51,7 +51,7 @@ export default class ReviewCard extends Component {
                         <Card.Body>
                             <Card.Title style={{textAlign:"center", marginBottom:"25px"}}><b>{review.class}</b></Card.Title>
                             <Card.Subtitle style={{textAlign:"center"}} ><b>{review.professor}</b> 교수님</Card.Subtitle>
-                            <Card.Text style={{textAlign:"center",color:"#EECC00",fontSize:"25px"}}><b>{review.star}</b></Card.Text>
+                            <Card.Text style={{textAlign:"center",color:"#EECC00",fontSize:"25px"}}> {new Array(review.star).fill(0).map(()=><b>★</b>)}</Card.Text>
                             <Card.Text style={{fontSize:"13px", marginTop:"20px"}}>{review.contents}</Card.Text>
                             <Card.Text style={{fontSize:"15px",textAlign:"center", marginTop:"3px"}} >{review.like}👍 {review.dislike}👎</Card.Text>
                         </Card.Body>
