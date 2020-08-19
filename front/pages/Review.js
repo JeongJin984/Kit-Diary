@@ -14,9 +14,9 @@ const Review = () => {
                     <Button variant="outline-info" style={{ margin: "10px", marginLeft: "20px" }}>전공</Button>{' '}
                     <Button variant="outline-info" style={{ margin: "10px" }}>MSC</Button>{' '}
                     <Button variant="outline-info" style={{ margin: "10px" }}>교양</Button>{' '}
-                    <div style={{ float: 'right', marginRight: "13%" }}>
-                    <FormControl class="inline"  type="text" placeholder="Search"  />
-                    <Button variant="outline-info" style={{ width: "60px", height: "40px"}}>검색</Button>
+                    <div style={{ float: 'right', marginRight: "14%" }}>
+                    <FormControl class="inline"  type="text" placeholder="Search" style={{height: "35px", paddingBottom:"7px"}}  />
+                    <Button variant="outline-info" style={{ width: "60px", marginLeft:"10px",  marginRight:"20px"}}>검색</Button>
                     <Link href="/ReviewWrite"><a><Button variant="outline-info" style={{margin:"10px"}}>후기쓰기</Button>{' '} </a></Link>
                     </div>
                 </Container>

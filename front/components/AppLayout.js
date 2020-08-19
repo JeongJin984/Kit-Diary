@@ -22,10 +22,6 @@ const AppLayout = ({ children }) => {
 								<Nav.Link href="/Review">강의후기</Nav.Link>
 								<Nav.Link href="/TimeTable">시간표</Nav.Link>
 							</Nav>
-							<Form inline>
-								<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-								<Button variant="outline-primary">Search</Button>
-							</Form>
 							{!onLogin ? <Link href="./login"><a><StyledButton variant="outline-primary">로그인</StyledButton></a></Link>
 							: <Link href="./login"><a><StyledButton variant="outline-primary">로그아웃</StyledButton></a></Link>}
 						</Navbar>
