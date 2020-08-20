@@ -1,47 +1,32 @@
-import React, { Component } from 'react';
+import React, {useState,useEffect} from 'react';
 import Pagination from './common/pagination';
 import { paginate } from '../utils/paginate'
 import { Card, Row, Col, Container } from 'react-bootstrap';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import {post_list} from '../reducers/post'
 
-export default class ReviewCard extends Component {
-    getReviews = () => {
-        const reviews = [
-            { id: 1, userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 3, contents: "내용~~~너무길면 ...으로 바꿀수 있나요?", like: 0,dislike:0 },
-            { id: 2,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용~~~~~~~~~~~~~~~~~~~~~~...", like: 0,dislike:0 },
-            { id: 3,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-            { id: 4,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-            { id: 5,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-            { id: 6,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-            { id: 7,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-            { id: 8,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-            { id: 9,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-            { id: 10,userid:1, classification: "MSC", class: "이산수학", professor: "오길호", star: 5, contents: "내용", like: 0,dislike:0 },
-        ]
-        return reviews;
-    }
+const ReviewCard = () => {
+  const { posts } = useSelector(state => state.post);
+  const [currentPage,setCurpage] = useState(1);//현재 페이지
+  const [pageSize,setTotalpage] = useState(9);// 한 페이지에 보여줄 아이템 개수
 
-    state = {
-        currentPage: 1,
-        reviews: this.getReviews(),
-        pageSize: 9 // 한 페이지에 보여줄 아이템 개수
-    }
+  const count = posts.length; //게시글 갯수
+  const reviews = paginate(posts, currentPage, pageSize)
 
-    handlePageChange = (page) => {
-        this.setState({ currentPage: page }); // 페이지 수 클릭 시 현재 페이지 변경
-    }
+  const dispatch = useDispatch();
 
-    render() {
-        const { length: count } = this.state.reviews;
-        const { pageSize, currentPage, reviews: allReviews } = this.state;
+  const handlePageChange = (page) => {
+    setCurpage(page); // 페이지 수 클릭 시 현재 페이지 변경
+  }
 
-        if (count === 0)
-            return <p><br></br>아무 후기도 없습니다. 후기를 작성해주세요.</p>
+  useEffect(() => {
+		dispatch(post_list());
+	}, []);
 
-        const reviews = paginate(allReviews, currentPage, pageSize)
-
-        return (
-            <React.Fragment>
+  return(
+    <div>
+      <React.Fragment>
                 <Container style={{ marginLeft: "70px" }}>
                     <Row>
                 {reviews.map(review =>
@@ -65,9 +50,14 @@ export default class ReviewCard extends Component {
                     itemsCount={count}
                     pageSize={pageSize}
                     currentPage={currentPage}
-                    onPageChange={this.handlePageChange}
+                    onPageChange={handlePageChange}
                 />
             </React.Fragment >
         );
-    }
+      
+    
+    </div>
+  );
 }
+
+export default ReviewCard;

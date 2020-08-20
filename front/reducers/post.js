@@ -1,54 +1,16 @@
 export const initialState = {
-  posts:[  
-    {
-      id: 1, //primery key
-      userid: 0, //foreigin key
-      star : 3,
-      classification : '전공',
-      professor: '고재필',
-      class: '기초프로그래밍',
-      title: '좋아용',
-      contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
-      Like: 3,
-      DisLike: 1,
-    },
-    {
-      id: 1, //primery key
-      userid: 0, //foreigin key
-      star : 3,
-      classification : '전공',
-      professor: '김성영',
-      class: '자바프로그래밍',
-      title: '좋아용',
-      contents:'너무 좋아용sdfsddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      Like: 3,
-      DisLike: 1,
-    },
-    {
-      id: 1, //primery key
-      userid: 0, //foreigin key
-      star : 3,
-      classification : '전공',
-      professor: '김성영',
-      class: '자바프로그래밍',
-      title: '좋아용',
-      contents:'너무 좋아용sdfsddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      Like: 3,
-      DisLike: 1,
-    },
-    {
-      id: 1, //primery key
-      userid: 0, //foreigin key
-      star : 3,
-      classification : '전공',
-      professor: '김성영',
-      class: '자바프로그래밍',
-      title: '좋아용',
-      contents:'너무 좋아용sdfsddsfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      Like: 3,
-      DisLike: 1,
-    },
-  ],
+  posts:[				{
+    id: 1, //primery key
+    userid: 0, //foreigin key
+    star : 5,
+    classification : '전공',
+    professor: 'ggg',
+    class: '기초프로그래밍',
+    title: '좋아용',
+    contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+    like: 3,
+    dislike: 1,
+  },],
   fetchinUpdate: false,   //리스트 업데이트 중 상태확인
 }
 
@@ -94,8 +56,6 @@ export const post_read = (id) => {
     data: id
   }
 }
-
-
 
 export const post_list = () => {
   console.log('post_list');
@@ -170,6 +130,7 @@ const reducer = (state=initialState, action) =>{
       }
 
     case POST_LIST_SUCCESS:
+      console.log('list_success_data:'+ action.data);
       return {
         ...state,
         posts:action.data,

@@ -16,6 +16,7 @@ const StyledButton = styled(Button)`
 const AppLayout = ({ children }) => {
 	const dispatch = useDispatch();
 	const [islogined, setLogin] = useState(false);
+	const user = useSelector(state=>state.user.user);
 
 	const Logout = () => {
 		dispatch(logOutAction());
@@ -30,6 +31,7 @@ const AppLayout = ({ children }) => {
 
 	}, []);
 	
+
 	return(
 		<div>
 			<Link href="/"><img src="/banner.jpg" width="100%"/></Link>

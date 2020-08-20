@@ -48,7 +48,128 @@ function* postlist(action) {
 		//const result = yield call(Post_listAPi)
 		yield put({
 			type: POST_LIST_SUCCESS,	//
-			data: action.data
+			data: [  
+				{
+					id: 1, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '박기남',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},
+				{
+					id: 2, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 5,
+					dislike: 3,
+				},
+				{
+					id: 3, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 4,
+					dislike: 2,
+				},
+				{
+					id: 4, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},
+				{
+					id: 5, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},
+				{
+					id: 6, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},
+				{
+					id: 7, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},
+				{
+					id: 8, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},
+				{
+					id: 9, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},    
+				{
+					id: 10, //primery key
+					userid: 0, //foreigin key
+					star : 5,
+					classification : '전공',
+					professor: '고재필',
+					class: '기초프로그래밍',
+					title: '좋아용',
+					contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+					like: 3,
+					dislike: 1,
+				},
+			]
 		})	
 	} catch (error) {
 		yield put({

@@ -54,8 +54,8 @@ export const logOutAction = () => {
 const reducer = (state=initialState, action) =>{
   switch(action.type){
       case LOG_IN_REQUEST:
-        console.log('login_request')
-        console.log('login' + JSON.stringify(action.data));
+        //console.log('login_request')
+        //console.log('login' + JSON.stringify(action.data));
           return {
               ...state,
               fetchinUpdate: true,
