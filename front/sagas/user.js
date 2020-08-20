@@ -34,7 +34,7 @@ function* logIn(action) {
 }
 
 function* signup(action) {
-	console.log('login_saga')
+	console.log('signup_saga')
 	console.log('action.data not json: ', action.data)
 	try {
 		// const result = yield call(signupAPI, action.data)

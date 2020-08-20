@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
+import './css/login.css';
+import './css/signup.css';
 
 import wrapper from '../store/configure-store';
 import { useSelector } from 'react-redux';

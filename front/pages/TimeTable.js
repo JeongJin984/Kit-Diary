@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AppLayout from '../components/AppLayout';
-import { Table } from 'react-bootstrap';
+import { Table, Row, Col, Form, FormControl } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
