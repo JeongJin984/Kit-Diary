@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import Carousel from 'react-bootstrap/Carousel'
 import { useSelector, useDispatch } from 'react-redux'
+
 import { Navbar, Nav, Form, Button, FormControl, Container, Row, Col, Card } from 'react-bootstrap'
 
 //import { setTest } from '../reducers/test'
@@ -63,7 +64,8 @@ const AppLayout = ({ children }) => {
 									</Card.Text>
 									{islogined && <StyledButton variant="outline-primary" onClick = {Logout}>로그아웃</StyledButton>}
 								</Card.Body>
-							</Card> :
+							</Card>
+							:
 							<Card style={{ width: '18rem', marginTop: "10px", position: "fixed" }}>
 								<Card.Img variant="top" src="/cat.png" />
 								<Card.Body>

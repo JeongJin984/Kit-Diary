@@ -11,29 +11,7 @@ const TimeTable = () => {
     const handleShow = () => setShow(true);
     return (
         <AppLayout>
-            <br />
-            <br />
-            <div>
-                <Button variant="outline-info" onClick={handleShow} style={{ marginLeft: '950px' }}>
-                    추가
-                </Button>
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>시간표 추가</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>This is modal body</Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            닫기
-                        </Button>
-                        <Button variant="primary" onClick={handleClose}>
-                            저장 후 닫기
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-                <Button variant="outline-info">수정</Button> <br />
-                <br />
-            </div>
+            <br/><br/>
             <Table responsive="sm">
                 <thead>
                     <tr>

@@ -1,6 +1,8 @@
 import React, { useState, useCallback, useEffect, } from 'react';
 import Form from 'react-bootstrap/Form';
-import styled from 'styled-components';
+import styled from 'styled-components'
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 import { Card } from 'react-bootstrap';
@@ -12,8 +14,10 @@ import Router from "next/router";
 
 const StyledCard = styled(Card)`
     margin: auto;
-`;
-
+`
+const StyledButton = styled(Button)`
+   margin-right: 10px;
+`
 const login = () => {
     const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
@@ -94,7 +98,8 @@ const login = () => {
                 </Form>
             </StyledCard>
         </div>
+
     );
-};
+}
 
 export default login;
