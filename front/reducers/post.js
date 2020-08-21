@@ -1,16 +1,20 @@
 export const initialState = {
-  posts:[				{
-    id: 1, //primery key
-    userid: 0, //foreigin key
-    star : 5,
-    classification : '전공',
-    professor: 'ggg',
-    class: '기초프로그래밍',
-    title: '좋아용',
-    contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
-    like: 3,
-    dislike: 1,
-  },],
+  posts:[				
+    {
+      id: 1, //primery key
+      userid: 0, //foreigin key
+      writer: '박기남',
+      date: 0,
+      star : 5,
+      classification : '전공',
+      professor: 'ggg',
+      class: '기초프로그래밍',
+      title: '좋아용',
+      contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+      like: 3,
+      dislike: 1,
+    },
+  ],
   fetchinUpdate: false,   //리스트 업데이트 중 상태확인
 }
 
@@ -34,6 +38,9 @@ export const POST_LIST_REQUEST = 'POST_LIST_REQUEST';
 export const POST_LIST_SUCCESS = 'POST_LIST_SUCCESS';
 export const POST_LIST_FAILRUE = 'POST_LIST_FAILRUE';
 
+export const LIKE_UP = 'LIKE_UP';
+export const LIKE_DOWN = 'LIKE_DOWN';
+
 
 export const post_save = (data) => {
   console.log('post_save');
@@ -42,6 +49,7 @@ export const post_save = (data) => {
     data: data
   }
 }
+
 export const post_remove = (id) => {
   console.log('post_remove');
   return{

@@ -66,13 +66,13 @@ const Home = () => {
                       </thead>
                       <tbody>
                           <tr>
-                            <td>글제목1 👍1 </td>
+                            <td>글제목1 👍1 작성자: 아무개</td>
                           </tr>
                           <tr>
-                            <td>글제목2 👍2 </td>
+                            <td>글제목2 👍2 작성자: 아무개</td>
                           </tr>
                           <tr>
-                            <td>글제목3 👍3 </td>
+                            <td>글제목3 👍3 작성자: 아무개</td>
                           </tr>
                       </tbody>
                     </Table>

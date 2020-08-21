@@ -68,7 +68,6 @@ const signup = () => {
 		(e) => {
 						e.preventDefault()
 						dispatch(SignupAction({email, password,stdnum,major,nickname}))
-            
         },
 		[email, password, stdnum, nickname, major],
 		)

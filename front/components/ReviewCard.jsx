@@ -30,7 +30,7 @@ const ReviewCard = () => {
                 <Container style={{ marginLeft: "70px" }}>
                     <Row>
                 {reviews.map(review =>
-                    <Link href={`/ReviewContent#id:${review.id}`}>
+                    <Link href={`/ReviewContent?id=${review.id}`}>
                     <Card border="info" style={{width:"23%", height:"290px",margin:"30px"}}>
                         <Card.Header>{review.classification}</Card.Header>
                         <Card.Body>
