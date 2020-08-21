@@ -18,6 +18,7 @@ const FreeBoardContent = () => {
                         <div><b>글쓴이</b>  &nbsp;  2020/01/01  &nbsp; 조회수: <b>2</b> &nbsp; 추천수: <b>2</b></div>
                     </Form.Label>
                 </Form.Row>
+                <hr/>
                 <Form.Row style={{marginTop:"10%", marginBottom:"10%"}}>
                     글내용~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<pre/>
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,7 +27,6 @@ const FreeBoardContent = () => {
                 <Button variant="outline-info" style={{marginLeft:"45%"}}>👍2</Button>{' '}
                 <Button variant="outline-info" style={{marginLeft:"10px"}}>👎2</Button>{' '}
                 </Form.Row>
-
                 <Form.Row style={{marginTop:"10%"}}>
                     <Comments />
                 </Form.Row>
