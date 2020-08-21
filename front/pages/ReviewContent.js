@@ -15,7 +15,7 @@ const ReviewContent = () => {
                 </Form.Row>
                 <Form.Row>
                     <Form.Label>
-                        <div><b>글쓴이</b>  &nbsp;  2020/01/01  &nbsp; 조회수: <b>2</b> &nbsp; 추천수: <b>2</b></div>
+                        <div><b>글쓴이</b>  &nbsp;  2020/01/01 &nbsp; 추천수: <b>2</b></div>
                     </Form.Label>
                 </Form.Row>
                 <hr />
