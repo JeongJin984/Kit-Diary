@@ -18,6 +18,11 @@ export const LOG_IN_REQUEST = 'LOG_IN_REQUEST'
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS'
 export const LOG_IN_FAILRUE = 'LOG_IN_FAILRUE'
 
+export const USER_REQUEST = 'USER_REQUEST'
+export const USER_SUCCESS = 'USER_SUCCESS'
+export const USER_FAILRUE = 'USER_FAILRUE'
+
+
 
 export const SIGNUP_REQUEST = 'SIGNUP_REQUEST'
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
@@ -31,6 +36,13 @@ export const logInAction = (data) => {
   return {
     type: LOG_IN_REQUEST,
     data: data
+  }
+}
+
+export const userAction = (data) =>{
+  return {
+    type: USER_REQUEST,
+    data: data,
   }
 }
 
@@ -103,6 +115,27 @@ const reducer = (state=initialState, action) =>{
           ...state,
           fetchinUpdate:false,
          }
+
+      case USER_REQUEST:
+        return{
+          ...state,
+          fetchinUpdate:true,
+        }
+      case USER_SUCCESS:
+        sessionStorage.setItem('writerinfo', JSON.stringify(action.data));
+        console.log(JSON.parse(sessionStorage.getItem('writerinfo')));
+        return{
+          ...state,
+          fetchinUpdate:false,
+        }
+      case USER_FAILRUE:
+        alert('userloading fail');
+        return{
+          ...state,
+          fetchinUpdate:false,
+        }
+
+
 
 
       case LOG_OUT:

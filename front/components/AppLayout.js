@@ -16,7 +16,6 @@ const StyledButton = styled(Button)`
 const AppLayout = ({ children }) => {
 	const dispatch = useDispatch();
 	const [islogined, setLogin] = useState(false);
-	const user = useSelector(state=>state.user.user);
 
 	const Logout = () => {
 		dispatch(logOutAction());
@@ -26,7 +25,7 @@ const AppLayout = ({ children }) => {
 
 	useEffect(() => {
 		setLogin(JSON.parse(sessionStorage.getItem('islogined')));
-		//console.log(JSON.parse(sessionStorage.getItem('user')));
+		console.log(JSON.parse(sessionStorage.getItem('user')));
 		//console.log(JSON.parse(sessionStorage.getItem('islogined')))
 
 	}, []);

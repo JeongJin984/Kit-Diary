@@ -1,5 +1,9 @@
 import { all, fork, call, put, takeLatest } from 'redux-saga/effects'
-import {LOG_IN_FAILRUE, LOG_IN_SUCCESS, LOG_IN_REQUEST, SIGNUP_REQUEST,SIGNUP_FAILRUE, SIGNUP_SUCCESS} from '../reducers/user'
+import {LOG_IN_FAILRUE, LOG_IN_SUCCESS, LOG_IN_REQUEST, SIGNUP_REQUEST,SIGNUP_FAILRUE, SIGNUP_SUCCESSUSER_REQUEST
+	,USER_SUCCESS
+	,USER_FAILRUE
+	,USER_REQUEST
+	} from '../reducers/user'
 
 import axios from 'axios'
 
@@ -13,9 +17,38 @@ function signupAPI(){
 	return axios.post('/api/user/join', body)
 }
 
+function userAPI(){
+	return axios.get(`/api/user/:${body}`);
+}
 
-//get 바디 x
-//post  body 가능
+
+function* userinfo(action) {
+	console.log('user_saga')
+	console.log('action.data not json: ', action.data.userid)
+	try {
+		//const result = yield call(userAPI, action.data.userid)
+		yield put({
+			type: USER_SUCCESS,	//
+			data: //result.data
+				{
+					id: '2', //primary key
+					email: 'asdf@asdf',
+					password: 'asdf',
+					stdnum: 123123,
+					major:  'asdf',
+					nickname: 'asdfasdf',
+			}
+		})	
+	} catch (error) {
+		yield put({
+			type: USER_FAILRUE,
+			error: error.response.data
+		})
+	}
+}
+
+
+
 function* logIn(action) {
 	console.log('login_saga')
 	console.log('action.data not json: ', action.data)
@@ -23,7 +56,15 @@ function* logIn(action) {
 		//const result = yield call(logInAPI, action.data)
 		yield put({
 			type: LOG_IN_SUCCESS,	//
-			data: action.data
+			data: result.data
+			// 	{
+			// 		id: '2', //primary key
+			// 		email: 'asdf@asdf',
+			// 		password: 'asdf',
+			// 		stdnum: 123123,
+			// 		major:  'asdf',
+			// 		nickname: 'asdfasdf',
+			// }
 		})	
 	} catch (error) {
 		yield put({
@@ -58,11 +99,14 @@ function* watchSignup(){
 	yield takeLatest(SIGNUP_REQUEST, signup)
 }
 
-
+function* watchUser(){
+	yield takeLatest(USER_REQUEST, userinfo)
+}
 
 export default function* userSaga() {
 	yield all([
 		fork(watchLogIn),
-		fork(watchSignup)
+		fork(watchSignup),
+		fork(watchUser),
 	])
 }
