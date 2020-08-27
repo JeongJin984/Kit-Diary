@@ -90,10 +90,6 @@ const write = () => {
   const onSubmitPostForm = useCallback(
 		(e) => {
 			e.preventDefault();
-			var date;
-			date = new Date();
-			date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-			console.log(typeof(date));
 
 			var like = 0;
 			var dislike = 0;
@@ -186,7 +182,7 @@ const write = () => {
 							<Form.Control as="textarea" rows="3" placeholder="내용을 입력하세요" value = {contents} onChange = {onChangeContents}/>
 						</Form.Group>
 						<br/>
-						<Link href ='/Review'><a><Button as="input" type="submit" value="완료" />{' '}</a></Link>
+						<Button as="input" type="submit" value="완료" />{' '}
 					</Form>
 				</Container>
 			</AppLayout>

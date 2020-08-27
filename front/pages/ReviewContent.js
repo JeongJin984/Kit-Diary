@@ -6,7 +6,7 @@ import Comments from '../components/Comments'
 import { useRouter } from "next/router";
 import { useDispatch } from 'react-redux';
 import {post_revision} from '../reducers/post'
-import {userAction} from '../reducers/user'
+import Nickname from '../components/Nickname';
 
 
 const ReviewContent = () => {
@@ -15,7 +15,6 @@ const ReviewContent = () => {
 	const [dislike_rendering, setdislike_Render] = useState(false);
 
 	const [islogined, setLogin] = useState(false);
-	const [writerinfo, setWriterinfo] = useState({});
 	const dispatch = useDispatch();
 
 	var review = router.query;
@@ -43,9 +42,7 @@ const ReviewContent = () => {
 	
 	useEffect(() => {
 		console.log('router'+router.query.userid);
-		dispatch(userAction({userid:router.query.userid}));
 		setLogin(JSON.parse(sessionStorage.getItem('islogined')));
-		setWriterinfo(JSON.parse(sessionStorage.getItem('writerinfo')));
 	}, []);
 	
 	return (
@@ -58,7 +55,7 @@ const ReviewContent = () => {
 				</Form.Row>
 				<Form.Row>
 					<Form.Label>
-						<div><b>{writerinfo.nickname}</b>  &nbsp;  {review.date} &nbsp; 추천수: <b>{review.like}</b></div>
+						<div><b><Nickname userid = {review.userid}/></b>  &nbsp;  {review.date} &nbsp; 추천수: <b>{review.like}</b></div>
 					</Form.Label>
 				</Form.Row>
 				<hr />
@@ -123,8 +120,9 @@ const ReviewContent = () => {
 				</Form.Row>
 
 				<Form.Row style={{ marginTop: "10%" }}>
-						<Comments/>
+						<Comments postid = {review.id} />
 				</Form.Row>
+
 			</Container>
 			<Form.Row style={{ marginTop: "10%" }}></Form.Row>
 		</AppLayout>

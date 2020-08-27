@@ -1,4 +1,5 @@
 import { all, fork, call, put, takeLatest } from 'redux-saga/effects'
+import commentSaga from './comment';
 import {
   POST_SAVE_REQUEST,
   POST_SAVE_SUCCESS,
@@ -52,173 +53,173 @@ function* postlist(action) {
 	console.log('postlist_saga')
 	console.log('action.data not json: ', action.data)
 	try {
-		const result = yield call(Post_listAPi)
+		//const result = yield call(Post_listAPi)
 		yield put({
 			type: POST_LIST_SUCCESS,	//
-			data: result.data
-			// 	[  
-			// 		{
-			// 			id: 0, //primery key
-			// 			userid: 0, //foreigin key
+			data: //result.data
+				[  
+					{
+						id: 0, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 5,
-			// 			date: 0,
+						star : 5,
+						date: 0,
 			
-			// 			classification : 'Major',
-			// 			professor: '고재필',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 fasdfsd좋아용afsdfasdfdssfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : 'Major',
+						professor: '고재필',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 fasdfsd좋아용afsdfasdfdssfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 1, //primery key
-			// 			userid: 3, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 1, //primery key
+						userid: 3, //foreigin key
 			
-			// 			star : 4,
-			// 			date: 0,
+						star : 4,
+						date: 0,
 			
-			// 			classification : 'Major',
-			// 			professor: 'gsdfdasfgg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 dsfasf좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : 'Major',
+						professor: 'gsdfdasfgg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 dsfasf좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 2, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 2, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 2,
-			// 			date: 0,
+						star : 2,
+						date: 0,
 			
-			// 			classification : 'General',
-			// 			professor: '나나나',
-			// 			class: '기초프로sdfasd그래밍',
-			// 			title: '좋아asfs용',
-			// 			contents:'너무 좋아sfasdf용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : 'General',
+						professor: '나나나',
+						class: '기초프로sdfasd그래밍',
+						title: '좋아asfs용',
+						contents:'너무 좋아sfasdf용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 3, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 3, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 5,
-			// 			date: 0,
+						star : 5,
+						date: 0,
 			
-			// 			classification : '전공',
-			// 			professor: 'ggg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 좋아용',
+						classification : '전공',
+						professor: 'ggg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 좋아용',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 4, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 4, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 4,
-			// 			date: 0,
+						star : 4,
+						date: 0,
 			
-			// 			classification : '전공',
-			// 			professor: 'ggg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : '전공',
+						professor: 'ggg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 5, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 5, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 5,
-			// 			date: 0,
+						star : 5,
+						date: 0,
 			
-			// 			classification : '전공',
-			// 			professor: 'ggg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : '전공',
+						professor: 'ggg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 6, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 6, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 2,
-			// 			date: 0,
+						star : 2,
+						date: 0,
 			
-			// 			classification : '전공',
-			// 			professor: 'ggg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : '전공',
+						professor: 'ggg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 7, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 7, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 1,
-			// 			date: 0,
+						star : 1,
+						date: 0,
 			
-			// 			classification : '전공',
-			// 			professor: 'ggg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 좋아용afsdfsfasdfafsadfdafsa',
+						classification : '전공',
+						professor: 'ggg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 좋아용afsdfsfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 8, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 8, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 4,
+						star : 4,
 		
-			// 			date: 0,
+						date: 0,
 			
-			// 			classification : '전공',
-			// 			professor: 'ggg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : '전공',
+						professor: 'ggg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 		{
-			// 			id: 9, //primery key
-			// 			userid: 0, //foreigin key
+						like: 3,
+						dislike: 1,
+					},
+					{
+						id: 9, //primery key
+						userid: 0, //foreigin key
 			
-			// 			star : 0,
-			// 			date: 0,
+						star : 0,
+						date: 0,
 			
-			// 			classification : '전공',
-			// 			professor: 'ggg',
-			// 			class: '기초프로그래밍',
-			// 			title: '좋아용',
-			// 			contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+						classification : '전공',
+						professor: 'ggg',
+						class: '기초프로그래밍',
+						title: '좋아용',
+						contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 			
-			// 			like: 3,
-			// 			dislike: 1,
-			// 		},
-			// 	]
+						like: 3,
+						dislike: 1,
+					},
+				]
 		})	
 	} catch (error) {
 		yield put({
@@ -230,9 +231,9 @@ function* postlist(action) {
 
 function* savepost(action) {
 	console.log('addpost_saga')
-	console.log('action.data not json: ', action.data)
+	console.log('action.data not json: ', action.data) //{post object}
 	try {
-		const result = yield call(Add_postAPi, action.data)
+		//const result = yield call(Add_postAPi, action.data)
 		yield put({
 			type: POST_SAVE_SUCCESS,	//
 			data: null
@@ -249,7 +250,7 @@ function* delpost(action) {
 	console.log('delpost_saga')
 	console.log('action.data not json: ', action.data)
 	try {
-		const result = yield call(Del_postAPi, action.data) //ex {id:3}
+		//const result = yield call(Del_postAPi, action.data) //ex {id:3}
 		yield put({
 			type: POST_REMOVE_SUCCESS,	
 			data: null
@@ -266,58 +267,58 @@ function* searchpost(action) {
 	console.log('serch_saga')
 	console.log('action.data not json: ', action.data)
 	try {
-		const result = yield call(Search_postAPi, action.data) //{classification: "MSC"}
+		//const result = yield call(Search_postAPi, action.data) //{classification: "MSC"}
 		yield put({
 			type: POST_SEARCH_SUCCESS,
-			data: result.data
-		// 	[{
-		// 		id: 9, //primery key
-		// 		userid: 0, //foreigin key
+			data: //result.data
+			[{
+				id: 9, //primery key
+				userid: 0, //foreigin key
 	
-		// 		star : 5,
-		// 		date: 0,
+				star : 5,
+				date: 0,
 	
-		// 		classification : '전공',
-		// 		professor: 'ggg',
-		// 		class: '기초프로그래밍',
-		// 		title: '좋아용',
-		// 		contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+				classification : '전공',
+				professor: 'ggg',
+				class: '기초프로그래밍',
+				title: '좋아용',
+				contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 	
-		// 		like: 3,
-		// 		dislike: 1,
-		// 	},
-		// 	{
-		// 		id: 9, //primery key
-		// 		userid: 0, //foreigin key
+				like: 3,
+				dislike: 1,
+			},
+			{
+				id: 9, //primery key
+				userid: 0, //foreigin key
 	
-		// 		star : 5,
-		// 		date: 0,
+				star : 5,
+				date: 0,
 	
-		// 		classification : '전공',
-		// 		professor: 'ggg',
-		// 		class: '기초프로그래밍',
-		// 		title: '좋아용',
-		// 		contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+				classification : '전공',
+				professor: 'ggg',
+				class: '기초프로그래밍',
+				title: '좋아용',
+				contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 	
-		// 		like: 3,
-		// 		dislike: 1,
-		// 	},{
-		// 		id: 9, //primery key
-		// 		userid: 0, //foreigin key
+				like: 3,
+				dislike: 1,
+			},{
+				id: 9, //primery key
+				userid: 0, //foreigin key
 	
-		// 		star : 5,
-		// 		date: 0,
+				star : 5,
+				date: 0,
 	
-		// 		classification : '전공',
-		// 		professor: 'ggg',
-		// 		class: '기초프로그래밍',
-		// 		title: '좋아용',
-		// 		contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
+				classification : '전공',
+				professor: 'ggg',
+				class: '기초프로그래밍',
+				title: '좋아용',
+				contents:'너무 좋아용afsdfsfsafsfdsffsdafsdfdsfsdfadfasdfafsadfdafsa',
 	
-		// 		like: 3,
-		// 		dislike: 1,
-		// 	},
-		// ],
+				like: 3,
+				dislike: 1,
+			},
+		],
 		})	
 	} catch (error) {
 		yield put({
@@ -331,7 +332,7 @@ function* revisionpost(action) {
 	console.log('revision_saga')
 	console.log('action.data not json: ', action.data)
 	try {
-		const result = yield call(Search_postAPi, action.data) //{~~~};
+	//	const result = yield call(Revision_postApi, action.data) //{post object};
 		yield put({
 			type: POST_REVISION_SUCCESS,
 			data: null,

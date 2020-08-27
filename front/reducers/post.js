@@ -3,7 +3,7 @@ import Router from "next/router";
 export const initialState = {
   posts:[				
     {
-      id: 1, //primery key
+      id: 0, //primery key
       userid: 0, //foreigin key
 
       star : 5,
@@ -26,17 +26,13 @@ export const POST_SAVE_REQUEST = 'POST_SAVE_REQUEST';
 export const POST_SAVE_SUCCESS = 'POST_SAVE_SUCCESS';
 export const POST_SAVE_FAILRUE = 'POST_SAVE_FAILRUE';
 
-
 export const POST_REMOVE_REQUEST = 'POST_REMOVE_REQUEST';
 export const POST_REMOVE_SUCCESS = 'POST_REMOVE_SUCCESS';
 export const POST_REMOVE_FAILRUE = 'POST_REMOVE_FAILRUE';
 
-
 export const POST_SEARCH_REQUEST = 'POST_SEARCH_REQUEST';
 export const POST_SEARCH_SUCCESS = 'POST_SEARCH_SUCCESS';
 export const POST_SEARCH_FAILRUE = 'POST_SEARCH_FAILRUE';
-
-
 
 export const POST_LIST_REQUEST = 'POST_LIST_REQUEST';
 export const POST_LIST_SUCCESS = 'POST_LIST_SUCCESS';
@@ -73,7 +69,8 @@ export const post_search = (data) => {
 export const post_list = () => {
   console.log('post_list');
   return{
-    type: POST_LIST_REQUEST
+    type: POST_LIST_REQUEST,
+    data:null
   }
 }
 
@@ -166,7 +163,7 @@ const reducer = (state=initialState, action) =>{
       alert('posts_loading_fail')  
       return{
           ...state,
-          fetchinUpdata:false;
+          fetchinUpdata:false
         }
 
     case POST_REVISION_REQUEST: 

@@ -56,15 +56,15 @@ function* logIn(action) {
 		//const result = yield call(logInAPI, action.data)
 		yield put({
 			type: LOG_IN_SUCCESS,	//
-			data: result.data
-			// 	{
-			// 		id: '2', //primary key
-			// 		email: 'asdf@asdf',
-			// 		password: 'asdf',
-			// 		stdnum: 123123,
-			// 		major:  'asdf',
-			// 		nickname: 'asdfasdf',
-			// }
+			data: //result.data
+				{
+					id: '2', //primary key
+					email: 'asdf@asdf',
+					password: 'asdf',
+					stdnum: 123123,
+					major:  'asdf',
+					nickname: 'asdfasdf',
+			}
 		})	
 	} catch (error) {
 		yield put({

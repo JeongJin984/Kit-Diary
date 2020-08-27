@@ -116,6 +116,7 @@ const reducer = (state=initialState, action) =>{
           fetchinUpdate:false,
          }
 
+         
       case USER_REQUEST:
         return{
           ...state,
