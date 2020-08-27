@@ -1,57 +1,59 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import { Media, Container, Form, Button } from 'react-bootstrap';
+import {co_listAction} from '../reducers/comment'
+import { useDispatch, useSelector } from 'react-redux';
+import Pagination from './common/pagination';
+import { paginate } from '../utils/paginate'
+import {userAction} from '../reducers/user'
+import Nickname from './Nickname';
 
-const Comments = () => {
+const Comments = (data) => {
+  const postid = data.postid;
+  const { comments } = useSelector(state => state.comment);
+  const dispatch = useDispatch();
+
+  const [currentPage,setCurpage] = useState(1);//현재 페이지
+  const [pageSize,setTotalpage] = useState(5);// 한 페이지에 보여줄 아이템 개수
+  const count = comments.length; //게시글 갯수
+
+  const page_comments = paginate(comments, currentPage, pageSize)
+
+  const handlePageChange = (page) => {
+    setCurpage(page); // 페이지 수 클릭 시 현재 페이지 변경
+  }
+
+  const [islogined, setLogin] = useState();
+
+  useEffect(() => {
+		setLogin(JSON.parse(sessionStorage.getItem('islogined')));
+    dispatch(co_listAction(postid));
+	}, []);
+
   return(
     <Container>
       <hr/><br/>
-      <Media>
-        <img
-          width={64}
-          height={64}
-          className="mr-3"
-          src="/profile.jpg"
-          alt="Generic placeholder"
-        />
-        <Media.Body>
-          <h5>닉네임1 <h6 style={{float:"right"}}>2020.08.19 08:45</h6></h5>
-          <p>
-            댓글내용 <div style={{float:"right"}}>👍8&nbsp;&nbsp;&nbsp;👎2</div><br/>
-          </p><br/>
+      {page_comments.map(comment =>
+        <>
           <Media>
-            <img
-              width={64}
-              height={64}
-              className="mr-3"
-              src="/profile.jpg"
-              alt="Generic placeholder"
-            />
-            <Media.Body>
-              <h5>닉네임2<h6 style={{float:"right"}}>2020.08.19 09:45</h6></h5>
-              <p>
-                댓글내용 <div style={{float:"right"}}>👍8&nbsp;&nbsp;&nbsp;👎2</div>
-              </p>
-            </Media.Body>
-          </Media>
-        </Media.Body>
-      </Media><br/><br/>
-      <Media>
-        <img
-          width={64}
-          height={64}
-          className="mr-3"
-          src="/profile.jpg"
-          alt="Generic placeholder"
-        />
-        <Media.Body>
-          <h5>닉네임3<h6 style={{float:"right"}}>2020.08.19 11:55</h6></h5>
-          <p>
-            댓글내용 <div style={{float:"right"}}>👍8&nbsp;&nbsp;&nbsp;👎2</div>
-          </p>
-        </Media.Body>
-      </Media><br/><br/>
+          <Media.Body>
+            <h5><Nickname userid = {comment.userid}/></h5>
+            <p>
+              {comment.contents} <div style={{float:"right"}}>👍{comment.like}&nbsp;&nbsp;&nbsp;👎{comment.dislike}</div><br/>
+            </p><br/>
+          </Media.Body>
+        </Media><br/><br/>
+				</>
+      )}
+      <Pagination
+				itemsCount={count}
+				pageSize={pageSize}
+				currentPage={currentPage}
+				onPageChange={handlePageChange}
+			/>
+
       <Form>
+
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Control as="textarea" rows="3" placeholder="댓글을 입력하세요"/>
         </Form.Group>
