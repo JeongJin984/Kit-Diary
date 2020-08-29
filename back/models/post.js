@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-      class: {
+      class_: {
         type: DataTypes.STRING,
         allowNull: false
       },
@@ -32,8 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   )
-  POST.associate = (db) => {
-    db.POST.hasMany(db.User)
+  POST.associate = (db) => {    
     db.POST.hasMany(db.comment)
     db.POST.belongsToMany(db.hashtag, { through: 'POST_hashtag' })
   }
