@@ -53,7 +53,6 @@ const Comments = (data) => {
 			/>
 
       <Form>
-
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Control as="textarea" rows="3" placeholder="댓글을 입력하세요"/>
         </Form.Group>
