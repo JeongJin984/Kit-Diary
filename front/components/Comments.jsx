@@ -36,7 +36,7 @@ const Comments = (data) => {
       {page_comments.map(comment =>
         <>
           <Media>
-          <Media.Body>
+          <Media.Body style={{cursor:"default"}}>
             <h5><Nickname userid = {comment.userid}/></h5>
             <p>
               {comment.contents} <div style={{float:"right"}}>👍{comment.like}&nbsp;&nbsp;&nbsp;👎{comment.dislike}</div><br/>
