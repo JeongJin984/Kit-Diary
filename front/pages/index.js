@@ -34,7 +34,6 @@ const Home = () => {
                 <img className="d-block w-100" src="/2.jpg" alt="Third slide" />
                 <Carousel.Caption>
                   <h3>금오공과대학교 운동장</h3>
-                  <p>By 연서</p>
                 </Carousel.Caption>
               </Carousel.Item>
                 
@@ -66,13 +65,13 @@ const Home = () => {
                       </thead>
                       <tbody>
                           <tr>
-                            <td>글제목1 👍1 작성자: 아무개</td>
+                            <td style={{cursor:"pointer"}}>글제목1 👍1 작성자: 아무개</td>
                           </tr>
                           <tr>
-                            <td>글제목2 👍2 작성자: 아무개</td>
+                            <td style={{cursor:"pointer"}}>글제목2 👍2 작성자: 아무개</td>
                           </tr>
                           <tr>
-                            <td>글제목3 👍3 작성자: 아무개</td>
+                            <td style={{cursor:"pointer"}} >글제목3 👍3 작성자: 아무개</td>
                           </tr>
                       </tbody>
                     </Table>
@@ -94,13 +93,13 @@ const Home = () => {
                       </thead>
                       <tbody>
                         <tr>
-                          <td>글제목1 👍1 </td>
+                          <td  style={{cursor:"pointer"}}>글제목1 👍1 </td>
                         </tr>
                         <tr>
-                          <td>글제목2 👍2 </td>
+                          <td  style={{cursor:"pointer"}}>글제목2 👍2 </td>
                         </tr>
                         <tr>
-                          <td>글제목3 👍3 </td>
+                          <td  style={{cursor:"pointer"}}>글제목3 👍3 </td>
                         </tr>
                       </tbody>
                     </Table>

@@ -55,7 +55,7 @@ export default class BoardsPage extends Component {
               <th width="2%">추천</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{cursor:"pointer"}}>
             {boards.map(board =>
             <Link href={`/FreeBoardContent#id:${board.id}`}>
               <tr key={board.id}>

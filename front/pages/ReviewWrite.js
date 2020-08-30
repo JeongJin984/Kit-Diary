@@ -73,7 +73,6 @@ const write = () => {
                             />
                         </InputGroup>
                         <Form.Group controlId="exampleForm.ControlTextarea1">
-                            <Form.Label>내용</Form.Label>
                             <Form.Control as="textarea" rows="3" placeholder="내용을 입력하세요" />
                         </Form.Group>
                     </Form>
