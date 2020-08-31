@@ -22,7 +22,7 @@ router.post('/add', async function (req, res, next) {
     star: req.body.star,
     classification: req.body.classification,
     professor: req.body.professor,
-    class: req.body.class,
+    class_: req.body.class,
     title: req.body.title,
     like: 0,
     dislike: 0

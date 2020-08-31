@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     )
     User.associate = (db) => {
         db.User.hasMany(db.POST)
-        db.User.hasMany(db.commnet)
+        db.User.hasMany(db.comment)
         db.User.belongsToMany(db.class, { through: 'class_User' })
     }
     return User

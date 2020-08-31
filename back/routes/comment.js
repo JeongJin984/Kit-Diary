@@ -9,11 +9,11 @@ router.get('/:postid', async function (req, res, next) {
           PostId : req.params.postid
       },
     include: [{
-      model: db.User,
-      attributes: ['id', 'nickname']
+      model: db.POST,
+      attributes: ['id']
     }]
   })
-  res.json(commnets)
+  res.json(comments)
 })
 
 
