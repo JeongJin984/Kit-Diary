@@ -16,5 +16,8 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     )
+    comment.associate = (db) => {
+      db.comment.belongsTo(db.POST)
+    }
     return comment
   }
