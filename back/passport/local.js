@@ -10,6 +10,7 @@ module.exports = () => {
 		passwordField: 'password'
 	}, async (email, password, done) => {
 		try {
+			console.log('hi');
 			const user = await db.User.findOne({ where: { email }})
 			if(!user) {
 				return done(null, false, { reason: 'Not Existing User'})

@@ -63,9 +63,9 @@ app.use(function(err, req, res, next) {
   res.render('error')
 })
 
-app.listen(4000,function(){
-  console.log('i\'m listening on 4000')
-})
+// app.listen(4000,function(){
+//   console.log(`Example app listening at http://localhost:${port}`)
+// })
 
 
 module.exports = app

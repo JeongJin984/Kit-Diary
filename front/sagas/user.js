@@ -7,7 +7,7 @@ import {LOG_IN_FAILRUE, LOG_IN_SUCCESS, LOG_IN_REQUEST, SIGNUP_REQUEST,SIGNUP_FA
 
 import axios from 'axios'
 
-axios.defaults.baseURL="http://localhost:3000"
+axios.defaults.baseURL="http://localhost:4000"
 
 function logInAPI() {
 	return axios.post('/api/user/login', body) //다른 리소스 간에 자원공유, course orgin
@@ -53,7 +53,7 @@ function* logIn(action) {
 	console.log('login_saga')
 	console.log('action.data not json: ', action.data)
 	try {
-		//const result = yield call(logInAPI, action.data)
+		const result = yield call(logInAPI, action.data)
 		yield put({
 			type: LOG_IN_SUCCESS,	//
 			data: //result.data
